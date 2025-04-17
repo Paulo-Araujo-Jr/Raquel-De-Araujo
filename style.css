@@ -1,0 +1,467 @@
+/* Reset e Variáveis */
+:root {
+    --azul-escuro: #0a2f5c;
+    --azul-claro: #c0d7ff;
+    --cinza-claro: #f7f7f7;
+    --cinza-medio: #e1e1e1;
+    --cinza-escuro: #333;
+    --branco: #ffffff;
+    --sombra: 0 4px 12px rgba(0, 0, 0, 0.08);
+    --transicao: all 0.3s ease-in-out;
+  }
+  
+  *, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--branco);
+    color: var(--cinza-escuro);
+    line-height: 1.6;
+    overflow-x: hidden;
+  }
+  
+  /* Tipografia */
+  h1, h2, h3, h4 {
+    color: var(--azul-escuro);
+    line-height: 1.2;
+    font-weight: 600;
+  }
+  
+  h2 {
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    position: relative;
+    display: inline-block;
+  }
+  
+  h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background-color: var(--azul-claro);
+  }
+  
+  p {
+    margin-bottom: 1rem;
+    font-weight: 300;
+  }
+  
+  /* Layout */
+  .container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  section {
+    padding: 4rem 0;
+  }
+  
+  /* Header Fixo */
+  header {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 1.5rem 0;
+    position: sticky;
+    z-index: 1000;
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+  }
+  
+  .topo-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+  }
+  
+  .info h1 {
+    font-size: 2rem;
+    color: var(--branco);
+    margin-bottom: 0.5rem;
+  }
+  
+  .info p {
+    color: var(--azul-claro);
+    font-weight: 300;
+  }
+  
+  .foto-perfil {
+    width: 120px;
+    height: 120px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--branco);
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+  }
+  
+  /* Menu de Navegação */
+  .menu {
+    display: flex;
+    gap: 2rem;
+    margin-top: 1.5rem;
+  }
+  
+  .menu a {
+    color: var(--branco);
+    text-decoration: none;
+    font-weight: 500;
+    transition: var(--transicao);
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  
+  .menu a:hover {
+    color: var(--azul-claro);
+  }
+  
+  .menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: var(--azul-claro);
+    transition: var(--transicao);
+  }
+  
+  .menu a:hover::after {
+    width: 100%;
+  }
+  
+  /* Seções Principais */
+  .boas-vindas {
+    background-color: var(--cinza-claro);
+    text-align: center;
+    padding: 5rem 0;
+  }
+  
+  .boas-vindas p {
+    max-width: 700px;
+    margin: 0 auto;
+    font-size: 1.1rem;
+  }
+  
+  .qualidades ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+  }
+  
+  .qualidades li {
+    background-color: var(--branco);
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+    text-align: center;
+    transition: var(--transicao);
+  }
+  
+  .qualidades li:hover {
+    transform: translateY(-5px);
+  }
+  
+  .curriculo {
+    background-color: var(--cinza-claro);
+  }
+  
+  /* Carrossel de Projetos */
+  .carrossel-container {
+    position: relative;
+    margin: 2rem 0;
+  }
+  
+  .carrossel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 1.5rem;
+    padding: 1rem 0;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE/Edge */
+  }
+  
+  .carrossel::-webkit-scrollbar {
+    display: none; /* Chrome/Safari */
+  }
+  
+  .carrossel img {
+    flex: 0 0 auto;
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    scroll-snap-align: start;
+    box-shadow: var(--sombra);
+    transition: var(--transicao);
+    cursor: pointer;
+  }
+  
+  .carrossel img:hover {
+    transform: scale(1.03);
+  }
+  
+  /* Projetos */
+  .projeto {
+    margin-bottom: 4rem;
+    padding: 2rem;
+    background-color: var(--branco);
+    border-radius: 8px;
+    box-shadow: var(--sombra);
+  }
+  
+  .projeto h2 {
+    margin-bottom: 1rem;
+  }
+  
+  .projeto p {
+    margin-top: 1rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  footer a {
+    color: var(--azul-claro);
+    text-decoration: none;
+    transition: var(--transicao);
+  }
+  
+  footer a:hover {
+    color: var(--branco);
+    text-decoration: underline;
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .topo-header {
+      flex-direction: column;
+      text-align: center;
+    }
+  
+    .menu {
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  
+    .foto-perfil {
+      width: 100px;
+      height: 100px;
+    }
+  
+    h2 {
+      font-size: 1.75rem;
+    }
+  
+    .qualidades ul {
+      grid-template-columns: 1fr;
+    }
+  
+    .carrossel img {
+      width: 250px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .info h1 {
+      font-size: 1.5rem;
+    }
+  
+    .menu {
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+    }
+  
+    .carrossel img {
+      width: 220px;
+      height: 160px;
+    }
+  
+    section {
+      padding: 3rem 0;
+    }
+  }
+  
+  /* Animações Suaves */
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  section {
+    animation: fadeIn 0.6s ease-out forwards;
+  }
+  
+  /* Efeito de Destaque */
+  .highlight {
+    position: relative;
+    z-index: 1;
+  }
+  
+  .highlight::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(10, 47, 92, 0.1);
+    z-index: -1;
+    border-radius: 8px;
+  }
+  /* Navegação do Carrossel */
+.carrossel-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .carrossel-nav button {
+    background-color: var(--azul-escuro);
+    color: var(--branco);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: var(--transicao);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .carrossel-nav button:hover {
+    background-color: var(--azul-claro);
+    transform: scale(1.1);
+  }
+  
+  /* Indicadores do Carrossel */
+  .carrossel-indicadores {
+    display: flex;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+  }
+  
+  .carrossel-indicador {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: var(--cinza-medio);
+    cursor: pointer;
+    transition: var(--transicao);
+  }
+  
+  .carrossel-indicador.ativo {
+    background-color: var(--azul-escuro);
+    transform: scale(1.2);
+  }
+  
+  /* Modal para imagens ampliadas */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .modal.mostrar {
+    display: flex;
+  }
+  
+  .modal-conteudo {
+    max-width: 90%;
+    max-height: 90%;
+  }
+  
+  .fechar-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: var(--branco);
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  
+  /* Responsividade do Carrossel */
+  @media (min-width: 992px) {
+    .carrossel {
+      padding: 2rem;
+    }
+    
+    .carrossel img {
+      width: 350px;
+      height: 250px;
+    }
+  }
+  .curriculo-container {
+    margin: 2rem auto;
+    padding: 1rem;
+    background-color: #fff;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    text-align: center;
+  }
+  
+  /* Estilo responsivo para a imagem do currículo */
+  .curriculo-imagem {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* Para manter a proporção em telas grandes */
+  @media (min-width: 768px) {
+    .curriculo-imagem {
+      max-width: 80%;
+    }
+  }
+  
+  /* Para telas muito grandes (acima de 1200px) */
+  @media (min-width: 1200px) {
+    .curriculo-imagem {
+      max-width: 900px;
+    }
+  }
+  
+  /* Melhorias para impressão */
+  @media print {
+    .curriculo-imagem {
+      max-width: 100%;
+      box-shadow: none;
+      border-radius: 0;
+    }
+  }  
